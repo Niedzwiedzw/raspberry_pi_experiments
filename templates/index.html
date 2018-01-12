@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		    <meta charset="UTF-8">
+
+		        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			    <title>LED DRIVER</title>
+	</head>
+	<body>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<style>
+    .on {
+	            opacity: 1;
+			        }
+        .off {
+		        opacity: 0.5;
+				    }
+
+</style>
+<h1>PRZEŁĄCZNIK ŚWIATEŁ</h1>
+{% for led in leds %}
+<a href="/toggle/{{led.pin_number}}"><button class="{{ 'on' if led.state else 'off' }} btn btn-lg" style="background-color: {{ led.color }}">{{led.color}}</button></a>
+{% endfor %}
+
+	</body>
+</html>
